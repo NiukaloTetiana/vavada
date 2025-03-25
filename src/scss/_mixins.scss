@@ -1,0 +1,29 @@
+@use "./variables";
+
+@mixin container-max-width($width, $padding) {
+  max-width: $width;
+  padding: 0 $padding;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-start {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
