@@ -382,6 +382,9 @@ a {
   transform: translateY(0);
 }
 
+.footer {
+  background: url("../images/bg-footer.png") repeat #0a0a14;
+}
 .footer__container {
   padding-block: 30px;
 }

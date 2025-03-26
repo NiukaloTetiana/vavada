@@ -2,6 +2,8 @@
 @use "./mixins";
 
 .footer {
+  background: url("../images/bg-footer.png") repeat variables.$footer-bg-color;
+
   &__container {
     padding-block: 30px;
   }
