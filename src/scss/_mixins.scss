@@ -27,3 +27,11 @@
   flex-wrap: wrap;
   align-items: center;
 }
+
+@mixin text {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}

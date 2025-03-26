@@ -1,1 +1,94 @@
-<header class="header">header</header>
+<header class="header">
+  <div class="container header__container">
+    <a href="/">
+      <svg class="header__logo" width="200" height="50">
+        <use href="./images/icons.svg#icon-logo"></use>
+      </svg>
+    </a>
+
+    <nav class="header__nav">
+      <ul class="header__nav__list">
+        <li class="header__nav__item">
+          <a class="header__nav__link" href="/">Home</a>
+        </li>
+        <li class="header__nav__item">
+          <a class="header__nav__link" href="">Review</a>
+        </li>
+        <li class="header__nav__item">
+          <a class="header__nav__link" href="">Bonus</a>
+        </li>
+        <li class="header__nav__item">
+          <a class="header__nav__link" href="">Spins</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header__auth-wrapper">
+      <button class="header__button header__button-login" type="button">
+        Login
+      </button>
+
+      <button class="header__button header__button-register" type="button">
+        Registration
+      </button>
+    </div>
+
+    <button
+      class="header__button-menu js-menu__open"
+      type="button"
+      aria-expanded="false"
+    >
+      <svg width="26" height="26">
+        <use href="./images/icons.svg#icon-menu"></use>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="backdrop js-backdrop">
+  <div class="menu js-menu" id="menu">
+    <div class="menu__logo-wrapper">
+      <a href="/">
+        <svg class="menu__logo" width="100" height="24">
+          <use href="./images/icons.svg#icon-logo"></use>
+        </svg>
+      </a>
+
+      <button class="menu__toggle js-menu__close" type="button">
+        <svg width="24" height="24">
+          <use href="./images/icons.svg#icon-close"></use>
+        </svg>
+      </button>
+    </div>
+
+    <div class="menu__wrapper-nav">
+      <nav class="menu__nav">
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a class="header__nav__link" href="/">Home</a>
+          </li>
+          <li class="menu__item">
+            <a class="header__nav__link" href="">Review</a>
+          </li>
+          <li class="menu__item">
+            <a class="header__nav__link" href="">Bonus</a>
+          </li>
+          <li class="menu__item">
+            <a class="header__nav__link" href="">Spins</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="header__auth-wrapper">
+      <button class="header__button header__button-login" type="button">
+        Login
+      </button>
+
+      <button class="header__button header__button-register" type="button">
+        Registration
+      </button>
+    </div>
+  </div>
+</div>
