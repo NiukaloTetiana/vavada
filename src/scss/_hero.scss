@@ -4,7 +4,6 @@
 .hero {
   background: url("../images/background/bg-hero.svg") repeat-y left top;
   background-size: 100%;
-  height: 100vh;
 
   .container {
     padding-block: 40px;
@@ -47,6 +46,7 @@
     line-height: 34px;
     letter-spacing: 1px;
     text-transform: uppercase;
+    text-shadow: -2px -2px 0px variables.$accent-color, 2px 2px 0px #0000c8;
 
     @media only screen and (min-width: 768px) {
       font-size: 28px;
@@ -68,19 +68,12 @@
   }
 
   &__text {
-    font-size: 14px;
-    line-height: 20px;
+    @include mixins.text;
     margin-bottom: 20px;
-
-    @media only screen and (min-width: 768px) {
-      font-size: 16px;
-      line-height: 22px;
-    }
   }
 
   &__title-wrapper {
     @include mixins.flex-column;
-    justify-content: start;
     gap: 10px;
     background: linear-gradient(
       270.09deg,
@@ -90,6 +83,7 @@
       #06104f00 99.93%
     );
     padding-block: 20px;
+    margin-bottom: 20px;
   }
 
   &__img-title {
@@ -126,10 +120,10 @@
 
     &:hover,
     &:focus-visible {
-      color: variables.$gold-color;
+      color: variables.$accent-color;
     }
 
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 768px) {
       padding-inline: 30px;
     }
 
@@ -148,6 +142,154 @@
     &:hover::after,
     &:focus-visible::after {
       transform: rotate(0) scale(1);
+    }
+  }
+
+  &__details-container {
+    margin-bottom: 20px;
+
+    @media only screen and (min-width: 768px) {
+      @include mixins.flex-between;
+      align-items: start;
+    }
+  }
+
+  &__title-list {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: variables.$accent-color;
+    text-shadow: 2px 2px 0px variables.$black-text-color,
+      4px 4px 0px rgba(0, 0, 0, 0.3);
+    width: 160px;
+    margin-bottom: 20px;
+
+    @media only screen and (min-width: 768px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+
+    @media only screen and (min-width: 1220px) {
+      max-width: 800px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #414141;
+
+    &:has(details[open]) {
+      margin-bottom: 20px;
+
+      @media only screen and (min-width: 768px) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__details:hover &__span-svg,
+  &__details:focus-visible &__span-svg {
+    svg {
+      fill: variables.$accent-color;
+    }
+  }
+
+  &__details {
+    display: block;
+    transition: backgraund-color variables.$transition-delay
+        variables.$transition-type,
+      border variables.$transition-delay variables.$transition-type;
+
+    &[open] {
+      summary {
+        color: variables.$gold-color;
+
+        svg {
+          transform: rotate(180deg);
+          width: 12px;
+
+          @media only screen and (min-width: 768px) {
+            width: 18px;
+          }
+        }
+      }
+
+      .hero__icon-plus {
+        display: none;
+      }
+
+      .hero__icon-minus {
+        display: block;
+      }
+    }
+
+    &:not([open]) {
+      .hero__icon-plus {
+        display: block;
+      }
+
+      .hero__icon-minus {
+        display: none;
+      }
+    }
+  }
+
+  &__details[open] + &__description-wrapper {
+    grid-template-rows: 1fr;
+    margin-top: 10px;
+  }
+
+  &__summary {
+    @include mixins.flex-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.2;
+    width: 100%;
+    padding: 20px;
+  }
+
+  &__span-svg {
+    @include mixins.flex-center;
+
+    svg {
+      fill: variables.$white-text-color;
+      stroke: none;
+      flex-shrink: 0;
+
+      transition: transform variables.$transition-delay
+          variables.$transition-type,
+        fill variables.$transition-delay variables.$transition-type;
+
+      @media only screen and (min-width: 768px) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+  &__description-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition-duration: 0.5s;
+  }
+
+  &__description {
+    line-height: 22px;
+    font-size: 12px;
+    padding-inline: 10px;
+    overflow: hidden;
+
+    @media only screen and (min-width: 768px) {
+      font-size: 14px;
     }
   }
 }
