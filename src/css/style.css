@@ -430,13 +430,110 @@ summary {
     background-image: url("../images/hero/hero_desktop_2x.webp");
   }
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1200px) {
   .hero__img-container {
     background-position: right 0 top 0;
     height: 1480px;
     padding-top: 200px;
     margin-bottom: 0;
   }
+}
+.hero__title {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 34px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .hero__title {
+    font-size: 28px;
+  }
+}
+.hero__span {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+  color: #f7bf12;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .hero__span {
+    font-size: 20px;
+  }
+}
+.hero__text {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .hero__text {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+.hero__title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  background: linear-gradient(270.09deg, rgba(6, 16, 79, 0) 0.07%, rgba(6, 16, 79, 0.9019607843) 25.04%, rgba(6, 16, 79, 0.9019607843) 74.96%, rgba(6, 16, 79, 0) 99.93%);
+  padding-block: 20px;
+}
+.hero__img-title {
+  background: linear-gradient(180deg, #fff176, #ffc40f 50%, #f5b401 50.01%, #ffee5b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(1px 1px rgba(0, 5, 52, 0.5));
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 34px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.hero__button {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  transition: color 0.3s ease;
+  font-weight: 800;
+  text-align: center;
+  height: 30px;
+  border-radius: 50px;
+  padding-inline: 12px;
+  background-color: #fe284a;
+  box-shadow: 0 0 4px #000;
+}
+.hero__button:hover, .hero__button:focus-visible {
+  color: #f7bf12;
+}
+@media only screen and (min-width: 1200px) {
+  .hero__button {
+    padding-inline: 30px;
+  }
+}
+.hero__button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: rotate(-180deg) scale(0);
+  border-radius: inherit;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+.hero__button:hover::after, .hero__button:focus-visible::after {
+  transform: rotate(0) scale(1);
 }
 
 .footer {

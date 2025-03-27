@@ -33,3 +33,12 @@
   flex-direction: column;
   align-items: center;
 }
+
+@mixin button {
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: variables.$white-text-color;
+  transition: color variables.$transition-delay variables.$transition-type;
+}

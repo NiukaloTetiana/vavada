@@ -135,12 +135,7 @@
   }
 
   &__button {
-    font-size: 12px;
-    line-height: 22px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: variables.$white-text-color;
-    transition: color variables.$transition-delay variables.$transition-type;
+    @include mixins.button;
 
     &:hover,
     &:focus-visible {
