@@ -65,6 +65,14 @@ a {
   display: inline-block;
 }
 
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+summary {
+  list-style: none;
+}
+
 .container {
   min-width: 320px;
   max-width: 400px;
