@@ -4,41 +4,7 @@
 .hero {
   background: url("../images/background/bg-hero.svg") repeat-y left top;
   background-size: 100%;
-
-  .container {
-    padding-block: 40px;
-  }
-
-  &__img-container {
-    padding-block: 51px 96px;
-    background: url("../images/hero/hero_mobile_1x.webp") no-repeat center top -140px /
-      cover;
-    height: 641px;
-    margin-inline: auto;
-    margin-bottom: 35px;
-
-    @media only screen and (max-width: 767.98px) and (min-device-pixel-ratio: 2),
-      (max-width: 767px) and (min-resolution: 192dpi) {
-      background-image: url("../images/hero/hero_mobile_2x.webp");
-    }
-
-    @media only screen and (min-width: 768px) {
-      background-image: url("../images/hero/hero_desktop_1x.webp");
-      background-position: center top 0;
-    }
-
-    @media only screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
-      (min-width: 1440px) and (min-resolution: 192dpi) {
-      background-image: url("../images/hero/hero_desktop_2x.webp");
-    }
-
-    @media only screen and (min-width: 1200px) {
-      background-position: right 0 top 0;
-      height: 1480px;
-      padding-top: 200px;
-      margin-bottom: 0;
-    }
-  }
+  padding-block: 40px;
 
   &__title {
     font-size: 24px;
@@ -69,7 +35,21 @@
 
   &__text {
     @include mixins.text;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+  }
+
+  &__img-container {
+    @include mixins.flex-center;
+    align-items: end;
+    background: url("../images/background/bg-hero.webp") no-repeat center;
+    background-size: cover;
+    height: 220px;
+    width: 100%;
+    margin-bottom: 30px;
+
+    @media only screen and (min-width: 768px) {
+      height: 350px;
+    }
   }
 
   &__title-wrapper {
@@ -82,8 +62,12 @@
       #06104fe6 74.96%,
       #06104f00 99.93%
     );
-    padding-block: 20px;
-    margin-bottom: 20px;
+    padding-block: 10px;
+    width: 100%;
+
+    @media only screen and (min-width: 768px) {
+      padding-block: 20px;
+    }
   }
 
   &__img-title {
@@ -98,11 +82,15 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(1px 1px rgba(0, 5, 52, 0.5));
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 700;
-    line-height: 34px;
+    line-height: 24px;
     text-transform: uppercase;
     text-align: center;
+
+    @media only screen and (min-width: 768px) {
+      font-size: 26px;
+    }
   }
 
   &__button {
@@ -155,7 +143,7 @@
   }
 
   &__title-list {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
     line-height: 24px;
     text-transform: uppercase;
@@ -166,7 +154,12 @@
     margin-bottom: 20px;
 
     @media only screen and (min-width: 768px) {
+      font-size: 22px;
       margin-bottom: 0;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      width: 260px;
     }
   }
 
@@ -200,6 +193,7 @@
   &__details:focus-visible &__span-svg {
     svg {
       fill: variables.$accent-color;
+      stroke: variables.$accent-color;
     }
   }
 
@@ -215,11 +209,6 @@
 
         svg {
           transform: rotate(180deg);
-          width: 12px;
-
-          @media only screen and (min-width: 768px) {
-            width: 18px;
-          }
         }
       }
 
@@ -263,19 +252,21 @@
 
     svg {
       fill: variables.$white-text-color;
-      stroke: none;
+      stroke: variables.$white-text-color;
       flex-shrink: 0;
 
       transition: transform variables.$transition-delay
           variables.$transition-type,
-        fill variables.$transition-delay variables.$transition-type;
+        fill variables.$transition-delay variables.$transition-type,
+        stroke variables.$transition-delay variables.$transition-type;
 
       @media only screen and (min-width: 768px) {
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
       }
     }
   }
+
   &__description-wrapper {
     display: grid;
     grid-template-rows: 0fr;
@@ -287,9 +278,14 @@
     font-size: 12px;
     padding-inline: 10px;
     overflow: hidden;
+    padding-inline: 20px;
 
     @media only screen and (min-width: 768px) {
       font-size: 14px;
     }
+  }
+
+  &__paragraph {
+    @include mixins.text;
   }
 }
