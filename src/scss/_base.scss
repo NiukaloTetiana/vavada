@@ -114,7 +114,8 @@ summary {
     stroke: variables.$white-text-color;
   }
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     background-color: variables.$gold-color;
     transform: translateY(-7px);
   }

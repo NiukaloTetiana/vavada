@@ -114,7 +114,7 @@ summary {
   fill: #fff;
   stroke: #fff;
 }
-.scroll-up-btn:hover {
+.scroll-up-btn:hover, .scroll-up-btn:focus-visible {
   background-color: #f7bf12;
   transform: translateY(-7px);
 }
