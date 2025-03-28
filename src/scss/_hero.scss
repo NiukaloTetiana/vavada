@@ -234,7 +234,6 @@
 
   &__details[open] + &__description-wrapper {
     grid-template-rows: 1fr;
-    margin-top: 10px;
   }
 
   &__summary {
@@ -271,6 +270,7 @@
     display: grid;
     grid-template-rows: 0fr;
     transition-duration: 0.5s;
+    transition: grid-template-rows 0.5s ease, margin 0.5s ease;
   }
 
   &__description {

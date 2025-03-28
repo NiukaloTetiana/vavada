@@ -658,7 +658,6 @@ summary {
 }
 .hero__details[open] + .hero__description-wrapper {
   grid-template-rows: 1fr;
-  margin-top: 10px;
 }
 .hero__summary {
   display: flex;
@@ -692,6 +691,7 @@ summary {
   display: grid;
   grid-template-rows: 0fr;
   transition-duration: 0.5s;
+  transition: grid-template-rows 0.5s ease, margin 0.5s ease;
 }
 .hero__description {
   line-height: 22px;
