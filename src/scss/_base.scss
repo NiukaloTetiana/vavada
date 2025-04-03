@@ -9,12 +9,9 @@
 
 body {
   font-family: variables.$font-primary;
-  font-size: 16px;
   font-weight: 400;
-  letter-spacing: normal;
-  line-height: 1.6;
-  background-color: variables.$primary-bg-color;
-  color: variables.$text-color;
+  background-color: variables.$primary-color;
+  color: variables.$white-text-color;
 
   display: flex;
   min-height: 100vh;
@@ -79,16 +76,16 @@ summary {
 
 .container {
   min-width: 320px;
-  max-width: 376px;
-  padding: 0 14px;
+  max-width: 400px;
+  padding: 0 10px;
   margin: 0 auto;
 
   @media only screen and (min-width: 768px) {
-    @include mixins.container-max-width(768px, 32px);
+    @include mixins.container-max-width(768px, 20px);
   }
 
-  @media only screen and (min-width: 1248px) {
-    @include mixins.container-max-width(1248px, 56px);
+  @media only screen and (min-width: 1200px) {
+    @include mixins.container-max-width(1200px, 15px);
   }
 }
 
@@ -113,8 +110,8 @@ summary {
   &__icon {
     transform: rotate(-45deg);
     transition: stroke variables.$transition-delay variables.$transition-type;
-    fill: variables.$text-color;
-    stroke: variables.$text-color;
+    fill: variables.$white-text-color;
+    stroke: variables.$white-text-color;
   }
 
   &:hover,
